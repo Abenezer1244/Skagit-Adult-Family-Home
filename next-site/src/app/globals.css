@@ -133,6 +133,14 @@ select:focus-visible {
   background-size: 256px 256px;
 }
 
+/* ===== HERO TEXT SHADOW ===== */
+.hero-text {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.3), 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+.hero-text-sm {
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5), 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
 /* ===== BEAUTIFUL LG SHADOW ===== */
 .shadow-beautiful {
   box-shadow:

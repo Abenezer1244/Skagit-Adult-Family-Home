@@ -37,24 +37,24 @@ export default function HomePage() {
 
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto mt-12">
           <FadeIn delay={0.1}>
-            <p className="text-white/90 text-sm uppercase tracking-[0.2em] mb-6 font-normal">
+            <p className="text-white/90 text-sm uppercase tracking-[0.2em] mb-6 font-normal hero-text-sm">
               Skagit River LLC
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <h1 className="text-5xl md:text-7xl lg:text-[6.5rem] text-sand mb-6 leading-[0.95] font-light tracking-tight font-serif">
+            <h1 className="text-5xl md:text-7xl lg:text-[6.5rem] text-sand mb-6 leading-[0.95] font-light tracking-tight font-serif hero-text">
               Comfort. Care. <br />
               <span className="italic">Family.</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <p className="text-white/90 text-lg md:text-xl font-light leading-relaxed max-w-lg mx-auto mb-4">
+            <p className="text-white/90 text-lg md:text-xl font-light leading-relaxed max-w-lg mx-auto mb-4 hero-text-sm">
               A warm, residential adult family home where your loved ones receive
               personalized attention, dignity, and a true sense of belonging.
             </p>
           </FadeIn>
           <FadeIn delay={0.4}>
-            <p className="text-white/80 text-sm md:text-base font-normal tracking-wide mb-10">
+            <p className="text-white/80 text-sm md:text-base font-normal tracking-wide mb-10 hero-text-sm">
               Serving Mount Vernon and surrounding areas in Skagit County, WA.
             </p>
           </FadeIn>
