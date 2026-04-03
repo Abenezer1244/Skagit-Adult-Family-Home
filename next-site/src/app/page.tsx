@@ -37,7 +37,7 @@ export default function HomePage() {
 
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto mt-12">
           <FadeIn delay={0.1}>
-            <p className="text-white/90 text-sm uppercase tracking-[0.2em] mb-6 font-normal hero-text-sm">
+            <p className="text-white text-xs uppercase tracking-[0.35em] mb-6 font-medium hero-text-sm px-5 py-2 border border-white/30 rounded-full inline-block backdrop-blur-sm bg-white/10">
               Skagit River LLC
             </p>
           </FadeIn>
