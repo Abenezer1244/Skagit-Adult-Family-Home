@@ -82,7 +82,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* LEFT: Contact Form */}
           <FadeIn className="lg:col-span-7">
-            <div className="bg-white/60 backdrop-blur-sm border border-white/80 rounded-[2.5rem] p-8 md:p-10">
+            <div className="bg-white/60 backdrop-blur-sm border border-white/80 rounded-[2.5rem] p-8 md:p-10 shadow-beautiful">
               <h2 className="text-2xl font-serif text-rock mb-2">
                 Send us a message
               </h2>

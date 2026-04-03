@@ -223,7 +223,7 @@ export default function ServicesPage() {
       {/* ===== CARE APPROACH ===== */}
       <section className="py-20 lg:py-28 bg-sand">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="bg-white rounded-3xl px-8 py-14 sm:px-12 sm:py-20">
+          <div className="bg-white rounded-3xl px-8 py-14 sm:px-12 sm:py-20 shadow-beautiful">
             <div className="flex flex-col md:flex-row gap-12 lg:gap-20">
               {/* Sticky sidebar */}
               <div className="md:w-1/3 md:sticky md:top-32 md:self-start">
@@ -348,7 +348,7 @@ export default function ServicesPage() {
       {/* ===== SPECIALTIES ===== */}
       <section className="py-20 lg:py-28 bg-sand">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="bg-white rounded-3xl px-8 py-14 sm:px-12 sm:py-20">
+          <div className="bg-white rounded-3xl px-8 py-14 sm:px-12 sm:py-20 shadow-beautiful">
             <FadeIn className="text-center mb-16">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-clay mb-3">
                 Specialized Programs

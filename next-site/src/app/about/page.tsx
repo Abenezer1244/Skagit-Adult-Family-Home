@@ -126,7 +126,7 @@ export default function AboutPage() {
 
       {/* ===== VISION & MISSION ===== */}
       <section className="py-6 md:py-10">
-        <div className="bg-white rounded-[3rem] mx-2 md:mx-6 shadow-sm border border-rock/5 grain">
+        <div className="bg-white rounded-[3rem] mx-2 md:mx-6 shadow-beautiful border border-rock/5 grain">
           <div className="max-w-5xl mx-auto px-6 md:px-12 py-16 md:py-24">
             {/* Decorative vertical accent line */}
             <div className="flex gap-8 md:gap-12">
@@ -275,7 +275,7 @@ export default function AboutPage() {
 
       {/* ===== OUR PEOPLE ===== */}
       <section className="py-6 md:py-10">
-        <div className="bg-white rounded-[3rem] mx-2 md:mx-6 shadow-sm border border-rock/5 grain">
+        <div className="bg-white rounded-[3rem] mx-2 md:mx-6 shadow-beautiful border border-rock/5 grain">
           <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
             {/* Section header */}
             <FadeIn>

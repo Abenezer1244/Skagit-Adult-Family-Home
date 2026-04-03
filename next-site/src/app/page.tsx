@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn, StaggerChildren, ScaleReveal, ParallaxImage } from "@/components/motion";
@@ -42,7 +42,7 @@ export default function HomePage() {
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl text-sand mb-6 leading-tight font-light tracking-tight font-serif">
+            <h1 className="text-5xl md:text-7xl lg:text-[6.5rem] text-sand mb-6 leading-[0.95] font-light tracking-tight font-serif">
               Comfort. Care. <br />
               <span className="italic">Family.</span>
             </h1>
@@ -62,14 +62,14 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-sand text-rock px-8 py-4 rounded-full text-sm font-normal hover:bg-white transition-colors"
+                className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 bg-clay text-white px-8 py-4 rounded-full text-sm font-medium"
               >
                 <Phone className="w-4 h-4" />
                 Schedule a Visit
               </Link>
               <Link
                 href="/services"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full text-sm font-normal hover:bg-white hover:text-rock transition-colors"
+                className="btn-secondary w-full sm:w-auto flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full text-sm font-normal hover:bg-white hover:text-rock transition-colors"
               >
                 View our care
               </Link>
@@ -80,10 +80,10 @@ export default function HomePage() {
 
       {/* ===== TRUST STRIP ===== */}
       <FadeIn>
-        <section className="py-6 px-6 bg-stone">
-          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm text-rock/70 font-normal">
+        <section className="py-6 px-6 bg-rock">
+          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm text-sand/80 font-normal">
             <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-clay" />
+              <span className="w-1.5 h-1.5 rounded-full bg-sage" />
               Licensed WA State Adult Family Home
             </span>
             <span className="flex items-center gap-2">
@@ -91,7 +91,7 @@ export default function HomePage() {
               24/7 Awake Staff
             </span>
             <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-clay" />
+              <span className="w-1.5 h-1.5 rounded-full bg-sage" />
               DSHS #{SITE.license}
             </span>
             <span className="flex items-center gap-2">
@@ -102,68 +102,88 @@ export default function HomePage() {
         </section>
       </FadeIn>
 
-      {/* ===== EDITORIAL INTRO (replaces "Why Choose Us" cards) ===== */}
+      {/* ===== EDITORIAL INTRO — ASYMMETRIC LAYOUT (Fix #7: Break the grid) ===== */}
       <section className="py-24 md:py-32 px-6 md:px-12 bg-sand">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-          {/* Image */}
-          <ScaleReveal className="lg:col-span-7">
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
-              <Image
-                src="/gallery/dsc00613.webp"
-                alt="Welcoming front porch and entryway at Skagit River"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 58vw"
-              />
-              {/* Overlapping accent */}
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-clay/10 rounded-2xl -z-10 hidden lg:block" />
+        <div className="max-w-7xl mx-auto relative">
+          {/* Offset overlapping image composition */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+            {/* Image cluster — asymmetric overlap */}
+            <div className="lg:col-span-7 relative">
+              <ScaleReveal>
+                <div className="relative">
+                  {/* Main image */}
+                  <div className="aspect-[4/3] rounded-3xl overflow-hidden img-hover">
+                    <Image
+                      src="/gallery/dsc00613.webp"
+                      alt="Welcoming front porch and entryway at Skagit River"
+                      fill
+                      className="object-cover !relative"
+                      sizes="(max-width: 1024px) 100vw, 58vw"
+                    />
+                  </div>
+                  {/* Floating accent card — overlaps main image */}
+                  <div className="hidden lg:flex absolute -bottom-8 -right-6 bg-sage text-white rounded-2xl px-6 py-5 shadow-xl z-10 items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-2xl font-serif font-medium">
+                      6
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">Residents max</p>
+                      <p className="text-xs text-white/70">Intimate, personal care</p>
+                    </div>
+                  </div>
+                </div>
+              </ScaleReveal>
             </div>
-          </ScaleReveal>
 
-          {/* Text */}
-          <div className="lg:col-span-5">
-            <FadeIn direction="right">
-              <span className="text-clay-text text-xs font-normal uppercase tracking-[0.25em] mb-6 block">
-                More than just care
-              </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-8 font-light text-rock tracking-tight font-serif">
-                A true home for{" "}
-                <span className="italic text-clay">your family.</span>
-              </h2>
-              <p className="text-rock/70 text-lg font-light leading-relaxed mb-6">
-                Transitioning to care shouldn't mean losing the comfort of home.
-                We provide a safe, intimate environment where residents are treated
-                like family, supported by professional caregivers around the clock.
-              </p>
-              <p className="text-rock/70 font-light leading-relaxed mb-8">
-                With a small number of residents, our caregivers form meaningful
-                bonds with each person, adapting to their unique preferences,
-                routines, and needs. Home-cooked meals, gentle activities, and
-                constant companionship make every day feel natural.
-              </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 text-clay-text font-medium text-sm hover:text-rock transition-colors group"
-              >
-                Learn about our story
-                <span className="group-hover:translate-x-1 transition-transform">
-                  &rarr;
+            {/* Text — pushed down for asymmetry */}
+            <div className="lg:col-span-5 lg:pt-16">
+              <FadeIn direction="right">
+                <span className="inline-flex items-center gap-2 text-sage text-xs font-medium uppercase tracking-[0.25em] mb-6">
+                  <span className="w-8 h-px bg-sage" />
+                  More than just care
                 </span>
-              </Link>
-            </FadeIn>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] mb-8 font-normal text-rock tracking-tight font-serif">
+                  A true home for{" "}
+                  <span className="italic text-clay">your family.</span>
+                </h2>
+                <p className="text-rock/70 text-lg font-light leading-relaxed mb-6">
+                  Transitioning to care shouldn&apos;t mean losing the comfort of home.
+                  We provide a safe, intimate environment where residents are treated
+                  like family, supported by professional caregivers around the clock.
+                </p>
+                <p className="text-rock/70 font-light leading-relaxed mb-8">
+                  With a small number of residents, our caregivers form meaningful
+                  bonds with each person, adapting to their unique preferences,
+                  routines, and needs. Home-cooked meals, gentle activities, and
+                  constant companionship make every day feel natural.
+                </p>
+                <Link
+                  href="/about"
+                  className="link-animate inline-flex items-center gap-2 text-clay font-medium text-sm group"
+                >
+                  Learn about our story
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </FadeIn>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ===== EXPERTISE ZIGZAG ===== */}
-      <section className="py-20 px-6 md:px-12 bg-warm-white rounded-[3rem] mx-2 md:mx-6 relative grain">
+      <section className="py-20 px-6 md:px-12 bg-linen rounded-[3rem] mx-2 md:mx-6 relative grain">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-serif tracking-tight text-rock">
+              <span className="inline-flex items-center gap-2 text-sage text-xs font-medium uppercase tracking-[0.25em] mb-4">
+                <span className="w-8 h-px bg-sage" />
+                What we do
+                <span className="w-8 h-px bg-sage" />
+              </span>
+              <h2 className="text-4xl md:text-5xl font-serif tracking-tight text-rock font-normal">
                 Our Expertise
               </h2>
-              <p className="text-rock/60 font-light mt-4">
+              <p className="text-rock/60 font-light mt-4 text-lg">
                 Comprehensive care tailored to individual needs.
               </p>
             </div>
@@ -172,31 +192,31 @@ export default function HomePage() {
           {/* Expertise 1 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center mb-24">
             <FadeIn direction="left" className="order-2 md:order-1">
-              <span className="text-xs font-normal uppercase tracking-widest text-clay-text mb-4 block">
+              <span className="inline-flex items-center gap-2 rounded-full bg-sage-light px-3 py-1 text-xs font-medium text-sage uppercase tracking-widest mb-4">
                 Personalized Support
               </span>
-              <h3 className="text-3xl md:text-4xl mb-6 font-serif tracking-tight">
+              <h3 className="text-3xl md:text-4xl mb-6 font-serif tracking-tight font-normal">
                 Activities of Daily Living
               </h3>
               <p className="text-rock/70 mb-6 leading-relaxed font-light">
                 We assist with all daily routines respectfully and gently. Our goal
                 is to maintain dignity while providing the necessary support for
                 bathing, dressing, grooming, and mobility. We adapt to the
-                resident's pace, never rushing the process.
+                resident&apos;s pace, never rushing the process.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-sm text-rock/80 font-light">
-                  <span className="w-1.5 h-1.5 rounded-full bg-clay shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-sage shrink-0" />
                   Gentle bathing &amp; dressing assistance
                 </li>
                 <li className="flex items-center gap-3 text-sm text-rock/80 font-light">
-                  <span className="w-1.5 h-1.5 rounded-full bg-clay shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-sage shrink-0" />
                   Safe transferring &amp; mobility support
                 </li>
               </ul>
             </FadeIn>
             <ScaleReveal className="order-1 md:order-2">
-              <div className="h-[400px] rounded-2xl overflow-hidden">
+              <div className="h-[400px] rounded-2xl overflow-hidden img-hover">
                 <Image
                   src="https://kenwoodcare.com/wp-content/uploads/2019/01/shutterstock_367740032.jpg"
                   alt="Caregiver assisting senior resident with daily activities"
@@ -211,7 +231,7 @@ export default function HomePage() {
           {/* Expertise 2 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center mb-24">
             <ScaleReveal>
-              <div className="h-[400px] rounded-2xl overflow-hidden">
+              <div className="h-[400px] rounded-2xl overflow-hidden img-hover">
                 <Image
                   src="https://i.ibb.co/N6F0frqV/Medication-Management-Tips-for-Seniors.jpg"
                   alt="Medication management and care coordination"
@@ -222,10 +242,10 @@ export default function HomePage() {
               </div>
             </ScaleReveal>
             <FadeIn direction="right">
-              <span className="text-xs font-normal uppercase tracking-widest text-clay-text mb-4 block">
+              <span className="inline-flex items-center gap-2 rounded-full bg-clay/10 px-3 py-1 text-xs font-medium text-clay-dark uppercase tracking-widest mb-4">
                 Medical Oversight
               </span>
-              <h3 className="text-3xl md:text-4xl mb-6 font-serif tracking-tight">
+              <h3 className="text-3xl md:text-4xl mb-6 font-serif tracking-tight font-normal">
                 Health &amp; Medication Management
               </h3>
               <p className="text-rock/70 mb-6 leading-relaxed font-light">
@@ -250,10 +270,10 @@ export default function HomePage() {
           {/* Expertise 3 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
             <FadeIn direction="left" className="order-2 md:order-1">
-              <span className="text-xs font-normal uppercase tracking-widest text-clay-text mb-4 block">
+              <span className="inline-flex items-center gap-2 rounded-full bg-sage-light px-3 py-1 text-xs font-medium text-sage uppercase tracking-widest mb-4">
                 Quality of Life
               </span>
-              <h3 className="text-3xl md:text-4xl mb-6 font-serif tracking-tight">
+              <h3 className="text-3xl md:text-4xl mb-6 font-serif tracking-tight font-normal">
                 Engagement &amp; Well-being
               </h3>
               <p className="text-rock/70 mb-6 leading-relaxed font-light">
@@ -264,17 +284,17 @@ export default function HomePage() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-sm text-rock/80 font-light">
-                  <span className="w-1.5 h-1.5 rounded-full bg-clay shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-sage shrink-0" />
                   Music therapy and gentle exercises
                 </li>
                 <li className="flex items-center gap-3 text-sm text-rock/80 font-light">
-                  <span className="w-1.5 h-1.5 rounded-full bg-clay shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-sage shrink-0" />
                   Inviting spaces for family gatherings
                 </li>
               </ul>
             </FadeIn>
             <ScaleReveal className="order-1 md:order-2">
-              <div className="h-[400px] rounded-2xl overflow-hidden">
+              <div className="h-[400px] rounded-2xl overflow-hidden img-hover">
                 <Image
                   src="https://i.ibb.co/4wx6m52c/mary-beth-with-residents-2-800x.webp"
                   alt="Staff engaging with residents in common area"
@@ -288,13 +308,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS (editorial, NO cards) ===== */}
-      <section className="py-24 md:py-32 px-6 md:px-12 bg-stone">
+      {/* ===== FULL-BLEED IMAGE DIVIDER (Fix #5) ===== */}
+      <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
+        <div
+          className="parallax-divider absolute inset-0"
+          style={{ backgroundImage: "url('/gallery/dsc00616.webp')" }}
+        />
+        <div className="absolute inset-0 bg-rock/60" />
+        <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
+          <FadeIn>
+            <p className="text-white/70 text-sm uppercase tracking-[0.25em] mb-4 font-medium">
+              What families say
+            </p>
+            <p className="text-white text-3xl md:text-5xl font-serif italic leading-tight max-w-2xl">
+              &ldquo;It didn&apos;t feel like a facility &mdash; it felt like a home.&rdquo;
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ===== TESTIMONIALS ===== */}
+      <section className="py-24 md:py-32 px-6 md:px-12 bg-cream">
         <div className="max-w-6xl mx-auto">
           {/* Featured testimonial */}
           <div className="flex flex-col md:flex-row items-center gap-16 mb-20">
             <ScaleReveal className="w-full md:w-5/12">
-              <div className="aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden bg-stone relative">
+              <div className="aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden bg-stone relative img-hover">
                 <Image
                   src="https://i.ibb.co/q38P8Ykt/IMG-3019edit-2.jpg"
                   alt="Family visiting resident at Skagit River"
@@ -305,26 +344,26 @@ export default function HomePage() {
               </div>
             </ScaleReveal>
             <FadeIn direction="right" className="w-full md:w-7/12">
-              <span className="text-xs font-normal uppercase tracking-widest text-clay-text mb-4 block">
+              <span className="inline-flex items-center gap-2 rounded-full bg-sage-light px-3 py-1 text-xs font-medium text-sage uppercase tracking-widest mb-4">
                 Family Testimonial
               </span>
-              <h2 className="text-3xl md:text-5xl font-serif mb-8 tracking-tight leading-tight">
-                "They gave us our peace of mind back."
+              <h2 className="text-3xl md:text-5xl font-serif mb-8 tracking-tight leading-tight font-normal">
+                &ldquo;They gave us our peace of mind back.&rdquo;
               </h2>
               <p className="text-lg text-rock/80 font-light mb-8 italic leading-relaxed">
-                "Moving our father into care was the hardest decision we've ever
+                &ldquo;Moving our father into care was the hardest decision we&apos;ve ever
                 made. From the moment we walked into Skagit River, the guilt faded.
-                It didn't feel like a facility; it felt like a home. The staff knows
+                It didn&apos;t feel like a facility; it felt like a home. The staff knows
                 exactly how he likes his coffee, they sit and listen to his stories,
                 and the medical oversight is impeccable. We can finally sleep at
-                night knowing he is safe, loved, and treated with absolute dignity."
+                night knowing he is safe, loved, and treated with absolute dignity.&rdquo;
               </p>
               <div className="flex items-center gap-4 border-t border-rock/10 pt-6">
-                <div className="w-10 h-10 rounded-full bg-rock flex items-center justify-center text-sand text-sm font-serif">
+                <div className="w-10 h-10 rounded-full bg-sage flex items-center justify-center text-white text-sm font-serif">
                   S
                 </div>
                 <div>
-                  <p className="text-sm font-normal text-rock">S.J.</p>
+                  <p className="text-sm font-medium text-rock">S.J.</p>
                   <p className="text-xs font-light text-rock/60">
                     Daughter of Resident, Seattle, WA
                   </p>
@@ -333,7 +372,7 @@ export default function HomePage() {
             </FadeIn>
           </div>
 
-          {/* Additional quotes as flowing text, NOT cards */}
+          {/* Additional quotes */}
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
             {[
               {
@@ -342,6 +381,7 @@ export default function HomePage() {
                 name: "Michael T.",
                 relation: "Son of a Resident",
                 initial: "M",
+                color: "bg-clay",
               },
               {
                 quote:
@@ -349,6 +389,7 @@ export default function HomePage() {
                 name: "Amina K.",
                 relation: "Daughter of a Resident",
                 initial: "A",
+                color: "bg-sage",
               },
               {
                 quote:
@@ -356,6 +397,7 @@ export default function HomePage() {
                 name: "Jasmine R.",
                 relation: "Niece of a Resident",
                 initial: "J",
+                color: "bg-clay",
               },
               {
                 quote:
@@ -363,18 +405,19 @@ export default function HomePage() {
                 name: "David L.",
                 relation: "Grandson of a Resident",
                 initial: "D",
+                color: "bg-sage",
               },
             ].map((t) => (
               <div key={t.name} className="border-t border-rock/10 pt-8">
                 <p className="text-lg text-rock/80 font-light italic leading-relaxed mb-6 font-serif">
-                  "{t.quote}"
+                  &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-rock flex items-center justify-center text-sand text-xs font-serif">
+                  <div className={`w-8 h-8 rounded-full ${t.color} flex items-center justify-center text-white text-xs font-serif`}>
                     {t.initial}
                   </div>
                   <div>
-                    <p className="text-sm font-normal text-rock">{t.name}</p>
+                    <p className="text-sm font-medium text-rock">{t.name}</p>
                     <p className="text-xs font-light text-rock/60">
                       {t.relation}
                     </p>
@@ -390,7 +433,12 @@ export default function HomePage() {
       <section className="py-24 px-6 md:px-12 bg-sand">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif mb-12 text-center tracking-tight">
+            <span className="flex items-center justify-center gap-2 text-sage text-xs font-medium uppercase tracking-[0.25em] mb-4">
+              <span className="w-8 h-px bg-sage" />
+              Common questions
+              <span className="w-8 h-px bg-sage" />
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif mb-12 text-center tracking-tight font-normal">
               Frequently Asked Questions
             </h2>
           </FadeIn>

@@ -43,7 +43,7 @@ export function HomeFAQ() {
           <AccordionItem
             key={i}
             value={`faq-${i}`}
-            className="bg-warm-white rounded-xl px-6 border border-rock/5 data-[state=open]:ring-1 data-[state=open]:ring-rock/5"
+            className="bg-warm-white rounded-xl px-6 border border-rock/5 shadow-beautiful data-[state=open]:ring-1 data-[state=open]:ring-rock/5"
           >
             <AccordionTrigger className="text-left font-normal text-lg tracking-tight py-5 hover:no-underline">
               {item.q}

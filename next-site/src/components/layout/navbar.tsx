@@ -94,7 +94,7 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
         {/* Desktop CTA */}
         <Link
           href="/contact"
-          className="hidden md:inline-flex items-center gap-2 bg-clay text-white rounded-full px-5 py-2.5 text-sm font-medium shadow-md hover:bg-clay-dark transition-colors duration-200"
+          className="btn-primary hidden md:inline-flex items-center gap-2 bg-clay text-white rounded-full px-5 py-2.5 text-sm font-medium"
         >
           Schedule a Tour
         </Link>
@@ -179,7 +179,7 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full bg-clay text-white rounded-full px-5 py-3 font-medium shadow-md hover:bg-clay-dark transition-colors"
+                  className="btn-primary flex items-center justify-center gap-2 w-full bg-clay text-white rounded-full px-5 py-3 font-medium"
                 >
                   <Phone className="h-4 w-4" />
                   Schedule a Tour

@@ -173,7 +173,7 @@ export function GalleryGrid() {
               <button
                 type="button"
                 onClick={() => open(i)}
-                className="group relative w-full rounded-2xl overflow-hidden border border-rock/5 cursor-pointer focus-visible:ring-2 focus-visible:ring-clay focus-visible:outline-none"
+                className="group relative w-full rounded-2xl overflow-hidden border border-rock/5 shadow-beautiful cursor-pointer focus-visible:ring-2 focus-visible:ring-clay focus-visible:outline-none"
               >
                 <Image
                   src={img.src}

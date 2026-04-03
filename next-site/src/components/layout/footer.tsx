@@ -21,7 +21,7 @@ export function Footer() {
         </h2>
         <a
           href={SITE.phoneHref}
-          className="inline-flex items-center gap-2.5 bg-clay text-white rounded-full px-8 py-4 text-lg font-medium shadow-lg hover:bg-clay-dark transition-colors duration-200"
+          className="btn-primary inline-flex items-center gap-2.5 bg-clay text-white rounded-full px-8 py-4 text-lg font-medium"
         >
           <Phone className="h-5 w-5" />
           {SITE.phone}
