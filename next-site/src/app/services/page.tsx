@@ -16,12 +16,17 @@ import {
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn, ScaleReveal, StaggerChildren } from "@/components/motion";
+import { JsonLd } from "@/components/json-ld";
 import { SITE } from "@/lib/constants";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: `Services | ${SITE.name}`,
+  title: "Services",
   description:
     "Explore the comprehensive care services at Skagit River Adult Family Home, including medication management, memory care, hospice support, daily living assistance, and holistic wellness programs in Mount Vernon, WA.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 /* ------------------------------------------------------------------ */
@@ -130,6 +135,7 @@ const included = [
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd schema={breadcrumbSchema("Services", "/services")} />
       <Navbar />
 
       {/* ===== HERO ===== */}

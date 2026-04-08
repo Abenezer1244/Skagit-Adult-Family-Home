@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Disallow: /privacy
+Disallow: /terms
+
+# AI Search Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://skagitriverafh.com/sitemap.xml

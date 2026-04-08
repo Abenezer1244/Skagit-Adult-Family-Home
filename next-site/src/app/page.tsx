@@ -5,16 +5,22 @@ import { Phone, ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn, StaggerChildren, ScaleReveal, ParallaxImage } from "@/components/motion";
+import { JsonLd } from "@/components/json-ld";
 import { SITE } from "@/lib/constants";
+import { faqSchema } from "@/lib/schema";
 import { HomeFAQ } from "@/components/sections/home-faq";
 
 export const metadata: Metadata = {
   title: `${SITE.name} | Adult Family Home in Mount Vernon, WA`,
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd schema={faqSchema} />
       <Navbar variant="light" />
 
       {/* ===== HERO ===== */}

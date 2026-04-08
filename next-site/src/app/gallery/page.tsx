@@ -4,17 +4,23 @@ import { ImageIcon } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn } from "@/components/motion";
+import { JsonLd } from "@/components/json-ld";
 import { GalleryGrid } from "@/components/sections/gallery-grid";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Gallery",
   description:
     "Browse photos of Skagit River Adult Family Home in Mount Vernon, WA. See our welcoming exterior, comfortable interiors, private bedrooms, accessible amenities, and peaceful outdoor spaces.",
+  alternates: {
+    canonical: "/gallery",
+  },
 };
 
 export default function GalleryPage() {
   return (
     <>
+      <JsonLd schema={breadcrumbSchema("Gallery", "/gallery")} />
       <Navbar variant="dark" />
 
       <main

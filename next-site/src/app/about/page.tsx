@@ -5,10 +5,17 @@ import { Clock, Shield } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn, ScaleReveal, StaggerChildren } from "@/components/motion";
+import { JsonLd } from "@/components/json-ld";
 import { SITE } from "@/lib/constants";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Us",
+  description:
+    "Learn how Skagit River Adult Family Home was founded in Mount Vernon, WA — our story, our team, and our commitment to 24/7 personalized senior care with a maximum of 6 residents.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const journeySteps = [
@@ -53,6 +60,7 @@ const staffValues = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd schema={breadcrumbSchema("About Us", "/about")} />
       <Navbar variant="dark" />
 
       {/* ===== HERO ===== */}

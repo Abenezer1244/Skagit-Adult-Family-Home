@@ -3,17 +3,23 @@ import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn } from "@/components/motion";
+import { JsonLd } from "@/components/json-ld";
 import { SITE } from "@/lib/constants";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
     "Transparent pricing for Skagit River adult family home in Mount Vernon, WA. Monthly rate range, what's included, payment options including private pay and long-term care insurance.",
+  alternates: {
+    canonical: "/pricing",
+  },
 };
 
 export default function PricingPage() {
   return (
     <>
+      <JsonLd schema={breadcrumbSchema("Pricing", "/pricing")} />
       <Navbar />
 
       <main

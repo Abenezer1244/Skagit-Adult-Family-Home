@@ -4,7 +4,7 @@ export const SITE = {
   tagline: "Where your loved ones feel at home",
   description:
     "Skagit River Adult Family Home in Mount Vernon, WA provides compassionate, residential senior care with 24/7 support, high staff ratios, and a warm, home-like environment.",
-  url: "https://3hebroncareafh.site",
+  url: "https://skagitriverafh.com",
   phone: "(360) 723-2907",
   phoneHref: "tel:+13607232907",
   homePhone: "(360) 982-2076",

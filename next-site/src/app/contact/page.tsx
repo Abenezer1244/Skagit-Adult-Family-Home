@@ -5,16 +5,24 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn, ScaleReveal } from "@/components/motion";
+import { JsonLd } from "@/components/json-ld";
 import { ContactForm } from "@/components/sections/contact-form";
 import { SITE } from "@/lib/constants";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact Us",
+  description:
+    "Reach Skagit River Adult Family Home in Mount Vernon, WA. Call (360) 723-2907, email us, or fill out our form to schedule a tour and care assessment.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd schema={breadcrumbSchema("Contact", "/contact")} />
       <Navbar variant="dark" />
 
       {/* ===== HERO ===== */}
