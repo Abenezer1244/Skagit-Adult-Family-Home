@@ -54,7 +54,7 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
         aria-label="Main navigation"
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center gap-2.5 min-h-11">
           <Image
             src={SITE.logo}
             alt={`${SITE.name} logo`}
@@ -102,7 +102,7 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(true)}
-          className={`md:hidden p-2 rounded-lg transition-colors ${hamburgerClass}`}
+          className={`md:hidden p-2.5 rounded-lg transition-colors ${hamburgerClass}`}
           aria-label="Open menu"
         >
           <Menu className="h-6 w-6" />
@@ -148,7 +148,7 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
                 </Link>
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="p-2 text-sand/70 hover:text-sand rounded-lg transition-colors"
+                  className="p-2.5 text-sand/70 hover:text-sand rounded-lg transition-colors"
                   aria-label="Close menu"
                 >
                   <X className="h-6 w-6" />

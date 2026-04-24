@@ -83,29 +83,36 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* ===== TRUST STRIP ===== */}
-      <FadeIn>
-        <section className="py-6 px-6 bg-rock">
-          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm text-sand/80 font-normal">
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-sage" />
-              Licensed WA State Adult Family Home
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-clay" />
-              24/7 Awake Staff
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-sage" />
-              DSHS #{SITE.license}
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-clay" />
-              RN Delegated Medication Management
-            </span>
-          </div>
-        </section>
-      </FadeIn>
+      {/* ===== TRUST STRIP — continuous ticker ===== */}
+      {(() => {
+        const trustItems = [
+          { label: "Licensed WA State Adult Family Home", dot: "bg-sage" },
+          { label: "24/7 Awake Staff", dot: "bg-clay" },
+          { label: `DSHS #${SITE.license}`, dot: "bg-sage" },
+          { label: "RN Delegated Medication Management", dot: "bg-clay" },
+        ];
+        return (
+          <FadeIn>
+            <section
+              className="py-6 bg-rock ticker"
+              aria-label="Credentials and commitments"
+            >
+              <div className="ticker-track items-center text-sm text-sand/80 font-normal">
+                {[...trustItems, ...trustItems].map((item, i) => (
+                  <span
+                    key={i}
+                    className="flex items-center gap-2 mr-10 whitespace-nowrap"
+                    aria-hidden={i >= trustItems.length || undefined}
+                  >
+                    <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${item.dot}`} />
+                    {item.label}
+                  </span>
+                ))}
+              </div>
+            </section>
+          </FadeIn>
+        );
+      })()}
 
       {/* ===== EDITORIAL INTRO — ASYMMETRIC LAYOUT (Fix #7: Break the grid) ===== */}
       <section className="py-24 md:py-32 px-6 md:px-12 bg-sand">

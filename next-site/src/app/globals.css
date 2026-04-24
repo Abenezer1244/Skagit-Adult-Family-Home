@@ -134,13 +134,14 @@ select:focus-visible {
 }
 
 /* ===== HERO TEXT SHADOW =====
-   Kept as an insurance against edge pixels of the hero photo; the main
-   legibility work is done by a gradient overlay on the image itself. */
+   Dark text on a varied photo: soft warm-white halo lifts the text off
+   darker patches (tree trunks, blue siding) while staying invisible on
+   bright areas (sky, lawn). */
 .hero-text {
-  text-shadow: 0 2px 12px rgba(45, 42, 38, 0.25);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.3), 0 8px 40px rgba(0, 0, 0, 0.2);
 }
 .hero-text-sm {
-  text-shadow: 0 1px 8px rgba(45, 42, 38, 0.2);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5), 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* ===== BEAUTIFUL LG SHADOW ===== */
@@ -206,6 +207,27 @@ select:focus-visible {
 }
 .link-animate:hover::after {
   transform: scaleX(1);
+}
+
+/* ===== TRUST TICKER (horizontal marquee) ===== */
+.ticker {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 32s linear infinite;
+}
+.ticker:hover .ticker-track,
+.ticker:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 /* Parallax divider */
