@@ -183,7 +183,7 @@ export function GalleryGrid() {
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-rock/0 group-hover:bg-rock/10 transition-colors duration-300" />
               </button>
             </motion.div>
           ))}
@@ -198,7 +198,7 @@ export function GalleryGrid() {
         }}
       >
         <DialogPortal>
-          <DialogOverlay className="bg-black/90 backdrop-blur-sm" />
+          <DialogOverlay className="bg-rock/95 backdrop-blur-sm" />
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
             <DialogTitle className="sr-only">
               {lightboxIndex !== null

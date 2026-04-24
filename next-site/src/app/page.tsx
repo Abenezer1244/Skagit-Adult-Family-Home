@@ -32,13 +32,12 @@ export default function HomePage() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/gallery/dsc00600.webp"
-            alt="Skagit River adult family home exterior in Mount Vernon, WA"
+            src="/gallery/home-hero.webp"
+            alt="Skagit River Adult Family Home exterior at 2120 Forest Dr, Mount Vernon, WA"
             fill
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0" />
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto mt-12">
@@ -118,12 +117,12 @@ export default function HomePage() {
               <ScaleReveal>
                 <div className="relative">
                   {/* Main image */}
-                  <div className="aspect-[4/3] rounded-3xl overflow-hidden img-hover">
+                  <div className="relative aspect-[4/3] rounded-3xl overflow-hidden img-hover">
                     <Image
                       src="/gallery/dsc00613.webp"
                       alt="Welcoming front porch and entryway at Skagit River"
                       fill
-                      className="object-cover !relative"
+                      className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 58vw"
                     />
                   </div>
@@ -222,12 +221,12 @@ export default function HomePage() {
               </ul>
             </FadeIn>
             <ScaleReveal className="order-1 md:order-2">
-              <div className="h-[400px] rounded-2xl overflow-hidden img-hover">
+              <div className="relative h-[400px] rounded-2xl overflow-hidden img-hover">
                 <Image
                   src="https://kenwoodcare.com/wp-content/uploads/2019/01/shutterstock_367740032.jpg"
                   alt="Caregiver assisting senior resident with daily activities"
                   fill
-                  className="object-cover !relative"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
@@ -237,12 +236,12 @@ export default function HomePage() {
           {/* Expertise 2 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center mb-24">
             <ScaleReveal>
-              <div className="h-[400px] rounded-2xl overflow-hidden img-hover">
+              <div className="relative h-[400px] rounded-2xl overflow-hidden img-hover">
                 <Image
                   src="https://i.ibb.co/N6F0frqV/Medication-Management-Tips-for-Seniors.jpg"
                   alt="Medication management and care coordination"
                   fill
-                  className="object-cover !relative"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
@@ -300,12 +299,12 @@ export default function HomePage() {
               </ul>
             </FadeIn>
             <ScaleReveal className="order-1 md:order-2">
-              <div className="h-[400px] rounded-2xl overflow-hidden img-hover">
+              <div className="relative h-[400px] rounded-2xl overflow-hidden img-hover">
                 <Image
                   src="https://i.ibb.co/4wx6m52c/mary-beth-with-residents-2-800x.webp"
                   alt="Staff engaging with residents in common area"
                   fill
-                  className="object-cover !relative"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
